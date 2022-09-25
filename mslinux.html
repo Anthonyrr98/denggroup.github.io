@@ -1,0 +1,758 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Material Studio 2020 Linux</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="82c64460-603b-4f61-bfc2-52a18d14c4f4" class="page sans">
+	<header>
+		<h1 class="page-title">Material Studio 2020 Linux</h1>
+	</header>
+	<div class="page-body">
+		<h1 id="fa60c36f-3030-4d8e-bd4b-9317a58facd5" class=""><a href="#1">1.上传到服务器的文件</a></h1>
+		<h1 id="b480154d-fb4d-4f30-860c-772cfaa0bbd9" class=""><a href="#2">2.提交任务</a></h1>
+		<h1 id="705438b3-acce-461a-965c-e07647d6a3c5" class=""><a href="#3">3.查看任务</a></h1>
+		<h1 id="31ff281d-d584-47b1-a2e1-7245b4102593" class=""><a href="#4">4.附录</a></h1>
+		<p id="35313390-03ef-4cda-a675-a35a67aa8f4e" class="">
+</p>
+
+<p id="56b5eae6-94bd-4c5a-a990-1f6ec4fe3a73" class="">
+</p><h1 id="3df0d889-ab8b-4da7-b6b6-36fd7be65b63" class=""><a id="1">1.上传到服务器的文件 ：CASTEP输入文件和输出文件</a></h1>
+<div id="5001c9e6-1b80-447d-ba39-470928e7524f" class="collection-content"><h4 class="collection-title"></h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>File type</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Input or Output</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Brief description</th></tr></thead><tbody><tr id="6a2a4743-044d-4e09-bb6c-0282c375e06c"><td class="cell-title"><a href="https://www.notion.so/param-6a2a4743044d4e09bb6c0282c375e06c">.param *</a></td><td class="cell-Tp[l"><span class="selected-value select-value-color-pink">Input</span></td><td class="cell-[t{x">General input file (text)</td></tr><tr id="5bb78728-bff7-4380-952a-96e57ae57308"><td class="cell-title"><a href="https://www.notion.so/cell-5bb78728bff74380952a96e57ae57308">.cell *</a></td><td class="cell-Tp[l"><span class="selected-value select-value-color-pink">Input</span></td><td class="cell-[t{x">Structure input file (text)</td></tr><tr id="abb4caf4-3229-4924-986f-09d6711d09cf"><td class="cell-title"><a href="https://www.notion.so/castep-abb4caf432294924986f09d6711d09cf">.castep</a></td><td class="cell-Tp[l"><span class="selected-value select-value-color-orange">Output</span></td><td class="cell-[t{x">Report on the calculation (text)</td></tr><tr id="26314713-aff1-4108-b2a3-4c402ba3d06f"><td class="cell-title"><a href="https://www.notion.so/check-castep_bin-26314713aff14108b2a34c402ba3d06f">.check, .castep_bin *</a></td><td class="cell-Tp[l"><span class="selected-value select-value-color-orange">Output</span></td><td class="cell-[t{x">Charge density, wavefunctions, structure, and so on (binary)</td></tr><tr id="163c49b5-443d-4ab9-86e6-e06c9e0f2374"><td class="cell-title"><a href="https://www.notion.so/bands-163c49b5443d4ab986e6e06c9e0f2374">.bands *</a></td><td class="cell-Tp[l"><span class="selected-value select-value-color-orange">Output</span></td><td class="cell-[t{x">Eigenvalues (text)</td></tr><tr id="961092b5-b632-4c19-91c8-e49ab3c40281"><td class="cell-title"><a href="https://www.notion.so/cst_esp-961092b5b6324c1991c8e49ab3c40281">.cst_esp *</a></td><td class="cell-Tp[l"><span class="selected-value select-value-color-orange">Output</span></td><td class="cell-[t{x">Electrostatic potentials (binary)</td></tr><tr id="d568118a-d085-414b-aa0d-fa66c92a464e"><td class="cell-title"><a href="https://www.notion.so/geom-d568118ad085414baa0dfa66c92a464e">.geom *</a></td><td class="cell-Tp[l"><span class="selected-value select-value-color-orange">Output</span></td><td class="cell-[t{x">Geometry optimization trajectory data (text)</td></tr><tr id="38f63326-97af-4e86-b75e-d779a0c45451"><td class="cell-title"><a href="https://www.notion.so/md-38f6332697af4e86b75ed779a0c45451">.md *</a></td><td class="cell-Tp[l"><span class="selected-value select-value-color-orange">Output</span></td><td class="cell-[t{x">Molecular dynamics trajectory data (text)</td></tr><tr id="238cd1f2-4d1e-4973-8f84-e568cfa80897"><td class="cell-title"><a href="https://www.notion.so/ts-238cd1f24d1e49738f84e568cfa80897">.ts *</a></td><td class="cell-Tp[l"><span class="selected-value select-value-color-orange">Output</span></td><td class="cell-[t{x">Transition state search trajectory data (text)</td></tr><tr id="93e2d2ac-c22d-4d67-904c-5cdde235591e"><td class="cell-title"><a href="https://www.notion.so/phonon-93e2d2acc22d4d67904c5cdde235591e">.phonon *</a></td><td class="cell-Tp[l"><span class="selected-value select-value-color-orange">Output</span></td><td class="cell-[t{x">Phonon data (text)</td></tr><tr id="d3455445-f202-4ece-8bf4-e611505e2111"><td class="cell-title"><a href="https://www.notion.so/pdos_weights-d3455445f2024ece8bf4e611505e2111">.pdos_weights *</a></td><td class="cell-Tp[l"><span class="selected-value select-value-color-orange">Output</span></td><td class="cell-[t{x">Weights required to calculate PDOS (binary)</td></tr><tr id="f79f70e6-1241-4d84-9a45-7f16ff5704d1"><td class="cell-title"><a href="https://www.notion.so/cst_ome-f79f70e612414d849a457f16ff5704d1">.cst_ome *</a></td><td class="cell-Tp[l"><span class="selected-value select-value-color-orange">Output</span></td><td class="cell-[t{x">Matrix elements required to calculate optical properties (binary)</td></tr><tr id="31da4b4b-77bc-4546-bf29-7a211bcc8083"><td class="cell-title"><a href="https://www.notion.so/elf-31da4b4b77bc4546bf297a211bcc8083">.elf *</a></td><td class="cell-Tp[l"><span class="selected-value select-value-color-orange">Output</span></td><td class="cell-[t{x">Electron localization function, ELF (binary)</td></tr><tr id="dc61227f-27eb-4e5b-bb28-0b88b7fda501"><td class="cell-title"><a href="https://www.notion.so/bib-dc61227f27eb4e5bbb280b88b7fda501">.bib</a></td><td class="cell-Tp[l"><span class="selected-value select-value-color-orange">Output</span></td><td class="cell-[t{x">Bibliography file in BibTeX format (text)</td></tr><tr id="f176e278-8f91-42b0-a849-945b3ca17a35"><td class="cell-title"><a href="https://www.notion.so/otfg-f176e2788f9142b0a849945b3ca17a35">.otfg *</a></td><td class="cell-Tp[l"><span class="selected-value select-value-color-red">N/A</span></td><td class="cell-[t{x">Information required for generating pseudopotential files on the fly stored on the client (text)</td></tr></tbody></table></div><ul id="d7cb5bae-996c-4a07-a854-f3e9133bce48" class="bulleted-list"><li style="list-style-type:disc"><code>.param</code>文件：该文件即是 CASTEP calculattion 图形化界面所对应的内容</li></ul><ul id="6e95ba56-800a-42ab-9517-6dd8b152b3cb" class="bulleted-list"><li style="list-style-type:disc"><code>.cell</code>文件：该文件在 win 操作系统下是一个隐藏文件，其对应于可视化界面中的.xsd 文件</li></ul><p id="f2bbec91-7ab3-408d-a7fe-b3cf8e0d6ac4" class="">
+</p><p id="9effddec-5295-4b39-a57a-a904c4408748" class="">
+</p><p id="093d13d9-bbe2-4fae-bcb2-b4a0dc44e67e" class="">
+</p><p id="ae20de08-a498-4326-bf77-e22e07563a75" class="">
+</p><h1 id="468a09b2-5092-470e-b541-d8c0335d40d9" class=""><a id="2">2.提交任务</a></h1><pre id="26399b1d-0286-45b6-bca3-cde7080008b5" class="code code-wrap"><code>#!/bin/bash
+
+##jobname optional
+##partition location 
+##(nodes) x (ntasks-per-node) x (cpus-per-task) = (ntasks) = (cpus)
+
+
+#SBATCH --job-name=&quot;jobname&quot;      
+#SBATCH--partition=part2          
+#SBATCH --nodes=2                 
+#SBATCH --ntasks=48
+#SBATCH --ntasks-per-node=24
+#SBATCH --cpus-per-task=1         
+
+
+cd /&quot;your .cell .pram files location&quot;   
+## e.g /home/rlzhao/DFT/test/  ##e.g /home/rlzhao/DFT/test/
+
+export PATH=/home/rlzhao/BIOVIA/MaterialsStudio20.1/etc/CASTEP/bin/:$PATH 
+## 这个位置是 RunCASTEP.sh 的位置 看情况来
+
+RunCASTEP.sh -np 48 &quot;your .cell .pram files name&quot;    
+## np 并行运算 48=ntasks e.g RunCASTEP.sh -np 48 ZnO
+</code></pre><h2 id="652e9dfe-7916-491c-9f2e-2496d195b4ef" class="">上面脚本用记事本打开粘贴之后命名为 jobname.sh</h2><h2 id="372f58af-94f2-4e58-8987-0f1503a3a7a9" class="">提交脚本 </h2><pre id="7398acf4-7a89-40ba-a86d-0e963a280386" class="code code-wrap"><code>cd /&quot;your .cell .pram files location&quot;   
+## e.g /home/rlzhao/DFT/test/  ##e.g /home/rlzhao/DFT/test/
+sbatch test.sh</code></pre><h1 id="c5d4c5d0-1e76-4bdc-b02f-4ea44a00c6d3" class=""><a id="3">3.查看任务</a></h1><h2 id="964451dc-1e92-4801-99af-a015bac99500" class="">查看作业状态 squeue</h2><h2 id="f8790c7e-6575-44b8-bbb3-988be13e3785" class="">删除作业 scancel [jobid]</h2><h2 id="1c0adc50-bdf4-4660-a4d0-d6f79063564a" class="">作业信息 scontrol show job id</h2><p id="0cb7c110-912d-40f6-aa39-6ba6a1f4c7bd" class="">
+</p><p id="025071e6-5355-4b40-9891-ccee3b321cb7" class="">
+</p><p id="0c8659be-fb8f-4333-9f8e-1e5f5f11377c" class="">
+</p><h1 id="40bea0ab-464b-4e6e-a576-33023756b831" class=""><a id="4">4.附录</a></h1><h3 id="5c3b0e9c-95ff-478c-a371-edfcb944d19e" class="">脚本内容意义</h3><table id="0eabf515-4ad8-467d-ae6d-4741e562fb90" class="simple-table"><tbody><tr id="86dadbd6-673a-4877-b6bf-346ac2564869"><td id="]vmq" class="" style="width:272px">选项</td><td id="MtV[" class="" style="width:437px">含义</td></tr><tr id="8932700e-bf9e-415a-a8ae-f4326fa145b5"><td id="]vmq" class="" style="width:272px">-n，-ntasks=number</td><td id="MtV[" class="" style="width:437px">指定要运行的任务数。请求为number个任务分配资源，默认每个任务一个cpu核心，注意n为任务总数，不是每个节点任务数</td></tr><tr id="810abb47-304e-4c22-ad4b-bd79930c750f"><td id="]vmq" class="" style="width:272px">-c，--cpus-per-task=ncpus</td><td id="MtV[" class="" style="width:437px">告知资源管理系统控制进程，作业的每个任务npcus个cpu核心，若未指定此选项，则默认每个任务分配一个cpu核心</td></tr><tr id="b877ecc0-142d-4294-a881-6b07c56a5543"><td id="]vmq" class="" style="width:272px">-N，--nodes=minnodes[-maxnodes]</td><td id="MtV[" class="" style="width:437px">请求为作业至少分配minnodes个节点，最大分配maxnodes个节点</td></tr><tr id="9cb6eee5-5b7c-483f-a93d-799bce57eb14"><td id="]vmq" class="" style="width:272px">--ntasks-­per-­node=&lt;ntasks&gt;</td><td id="MtV[" class="" style="width:437px"></td></tr><tr id="4284462d-917d-46c5-a574-a4fd7de63b5f"><td id="]vmq" class="" style="width:272px">-G,
+  --gpus=[&lt;type&gt;:]&lt;number&gt;</td><td id="MtV[" class="" style="width:437px">gpu申请的类型和数量，多种卡使用“，”分割（
+  --gpus=tesla:3 ）</td></tr><tr id="11e0211f-d052-424d-8148-645b9d357b63"><td id="]vmq" class="" style="width:272px">--gpus-per-node=[&lt;type&gt;:]&lt;number&gt;</td><td id="MtV[" class="" style="width:437px">每个节点的GPU数量</td></tr><tr id="1eaa19d8-a4e0-4a98-b0ba-7051ca97ee90"><td id="]vmq" class="" style="width:272px">-p，--partion=partition name</td><td id="MtV[" class="" style="width:437px">指定所需资源使用的分区</td></tr><tr id="25031c4e-62c5-4a54-9da7-f74a841f002a"><td id="]vmq" class="" style="width:272px">-w, --nodelist=&lt;node name
+  list&gt;</td><td id="MtV[" class="" style="width:437px">指定任务运行在某个节点上</td></tr><tr id="c7e90211-da5f-467c-af87-5b1aa17fc850"><td id="]vmq" class="" style="width:272px">-J，--job-name=[name]</td><td id="MtV[" class="" style="width:437px">作业名</td></tr><tr id="6f6455dc-e65c-473d-8b26-d6c1aa04b3d0"><td id="]vmq" class="" style="width:272px">-o，--output=[file_name]</td><td id="MtV[" class="" style="width:437px">标准输出文件</td></tr><tr id="612a5943-6f4c-4618-baaa-121a11807cf7"><td id="]vmq" class="" style="width:272px">-e，--error=[file_name]</td><td id="MtV[" class="" style="width:437px">标准错误文件</td></tr><tr id="f65b8248-15a5-45c3-8023-a8e8fe3342e3"><td id="]vmq" class="" style="width:272px">-t，--time=[dd-hh:mm:ss]</td><td id="MtV[" class="" style="width:437px">作业最大运行时长</td></tr><tr id="5246b691-69db-4d4c-af6f-85bc5b8e0952"><td id="]vmq" class="" style="width:272px">--exclusive</td><td id="MtV[" class="" style="width:437px">独占节点</td></tr><tr id="dc202048-59fd-4ba6-8600-ea23f691336e"><td id="]vmq" class="" style="width:272px">-mail-type=[type]</td><td id="MtV[" class="" style="width:437px">通知类型，可选
+  all, fail, end，分别对应全通知、故障通知、结束通知</td></tr><tr id="ef9cc7ae-6aaa-492b-8bdc-e33faf3078bf"><td id="]vmq" class="" style="width:272px">--mail-user=[mail_address]</td><td id="MtV[" class="" style="width:437px">通知邮箱</td></tr><tr id="3159021b-caab-4a56-8452-32e315ba4a42"><td id="]vmq" class="" style="width:272px">--nodelist=[nodes]</td><td id="MtV[" class="" style="width:437px">偏好的作业节点</td></tr><tr id="0e58a381-f506-4c76-9cbb-f47af641c355"><td id="]vmq" class="" style="width:272px">--exclude=[nodes]</td><td id="MtV[" class="" style="width:437px">避免的作业节点</td></tr><tr id="6648dd9a-bf6b-44ba-9b17-eb7ec46d3880"><td id="]vmq" class="" style="width:272px">--depend=[state:job_id]</td><td id="MtV[" class="" style="width:437px">作业依赖</td></tr><tr id="02e2d8c0-05e6-412a-bf00-1b0d3fe1c7d3"><td id="]vmq" class="" style="width:272px">--array=[array_spec]</td><td id="MtV[" class="" style="width:437px">序列作业</td></tr></tbody></table><h3 id="e2c60a34-d35f-47e1-9729-429fa53102e2" class=""><strong>squeue 用法</strong></h3><pre id="e05e8f2d-f773-4095-b3a9-8209bd2f976a" class="code code-wrap"><code>squeue ##显示队列中的作业信息
+-A、--­­account=：显示用户的作业信息， 用户以“,”分隔。
+-­a、--­­all：显示所有队列中的作业及作业步信息，也显示被配置为对用户组隐藏队列的信息。 
+-­r、--­­array：以每行一个作业元素方式显示。 
+--­noheader：不显示头信息，即不显示第一行“PARTITION AVAIL TIMELIMIT NODES STATE NODELIST”。­
+--­hide：不显示隐藏队列中的作业和作业步信息。此为默认行为，不显示配置为 对用户组隐藏队列的信息。
+­--­help：显示帮助信息
+-­i、--­­iterate=：以间隔秒方式循环显示信息。 
+-­j、--­­jobs=：显示作业号的作业，作业号以“,”分隔。­­
+-­l、--­­long：显示更多的作业信息
+­-p、--­­partition=：显示特定队列信息，以“,”分隔。
+-­q 、­­qos=：显示特定qos的作业和作业步，以“,”分隔。
+-o、--­­format=：以特定格式显示信 息。参见 ­O , ­­Format=，采用不同参数。
+
+作业信息-squeue主要输出项
+•JOBID：作业号。 
+•PARTITION：队列名（分区名）。 
+•NAME：作业名。 
+•USER：用户名。 
+•TIME：已运行时间。 
+•ST：状态。
+					PD：排队中，PENDING。                 R：运行中，RUNNING。 
+					CA：已取消，CANCELLED。               CF：配置中，CONFIGURING。 
+					CG：完成中，COMPLETING                CD：已完成，COMPLETED。 
+					F：已失败，FAILED。                   TO：超时，TIMEOUT。
+					NF：节点失效，NODE FAILURE。          SE：特殊退出状态，SPECIAL EXIT STATE
+•NODELIST(REASON)：分配给的节点名列表（原因）：
+  AssociationJobLimit：作业达到其最大允许的作业数限制。 
+  AssociationResourceLimit：作业达到其最大允许的资源限制。 
+  InvalidQOS：作业QOS无效。 
+  NodeDown：作业所需的节点宕机。 
+  NonZeroExitCode：作业停止时退出代码非零。 
+  PartitionDown：作业所需的队列出于DOWN状态。
+  PartitionNodeLimit：作业所需的节点超过所用队列当前限制。 
+  Priority：作业所需的队列存在高等级作业或预留。 
+  QOSJobLimit：作业的QOS达到其最大作业数限制。
+  QOSResourceLimit：作业的QOS达到其最大资源限制。 
+  ReqNodeNotAvail：作业所需的节点无效，如节点宕机
+  Resources：作业等待其所需的资源可用。
+</code></pre></div></article></body></html>
